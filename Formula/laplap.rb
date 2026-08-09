@@ -1,8 +1,8 @@
 class Laplap < Formula
   desc "Cat-proof input lock for macOS — ignore keyboard, trackpad, and mouse"
   homepage "https://github.com/mr687/laplap"
-  url "https://github.com/mr687/laplap/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "7ebdcd3c3c953b438d50b3c961791ee7e3eb98c432ef6046356d761b132b131d"
+  url "https://github.com/mr687/laplap/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "96a773be12afe3c46d11f3a40690095478838dcc6983a0e4f172901d82f26187"
   license "MIT"
 
   depends_on "swift" => :build

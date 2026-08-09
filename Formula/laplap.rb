@@ -9,6 +9,7 @@ class Laplap < Formula
   depends_on "swift" => :build
 
   def install
+    system "swift", "build", "--configuration", "release", "--disable-sandbox"
     bin_path = Utils.safe_popen_read("swift", "build", "--configuration", "release", "--show-bin-path", "--disable-sandbox").strip
     bin.install File.join(bin_path, "laplap")
   end

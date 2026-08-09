@@ -5,16 +5,19 @@ class Laplap < Formula
   sha256 "7ebdcd3c3c953b438d50b3c961791ee7e3eb98c432ef6046356d761b132b131d"
   license "MIT"
 
-  depends_on :macos => :ventura
   depends_on "swift" => :build
+  depends_on macos: :ventura
 
   def install
     system "swift", "build", "--configuration", "release", "--disable-sandbox"
-    bin_path = Utils.safe_popen_read("swift", "build", "--configuration", "release", "--show-bin-path", "--disable-sandbox").strip
+    bin_path = Utils.safe_popen_read(
+      "swift", "build", "--configuration", "release",
+      "--show-bin-path", "--disable-sandbox"
+    ).strip
     bin.install File.join(bin_path, "laplap")
   end
 
   test do
-    system "#{bin}/laplap", "--help"
+    system bin/"laplap", "--help"
   end
 end
